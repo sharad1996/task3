@@ -1,4 +1,5 @@
 import Container from "react-bootstrap/Container";
+import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
@@ -10,10 +11,10 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Link to="/">Home</Link>
             <Nav.Link href="#link">About</Nav.Link>
             <Nav.Link href="#link">Services</Nav.Link>
-            <Nav.Link href="#link">Contact Us</Nav.Link>
+            <Link to="/contact-us">Contact Us</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
