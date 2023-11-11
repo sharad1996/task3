@@ -8,6 +8,7 @@
     height: 70px;
     overflow: hidden;
     z-index: 1000;
+    background-color: #ea4d4e;
 }
 
 .nav-stickey {

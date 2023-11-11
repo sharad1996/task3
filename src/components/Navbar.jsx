@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { useScrollYPosition } from "react-use-scroll-position";
 import "../styles/navbar.css";
@@ -10,7 +11,7 @@ function Navbar({ links }) {
   const stickeyTrigger = window.innerHeight / 2.75;
 
   return (
-    <Container>
+    <Container className="custom-navbar">
       <div
         className={`nav${scrollY > stickeyTrigger ? " nav-stickey" : ""}${
           menuOpen ? " nav-open" : ""
@@ -22,10 +23,10 @@ function Navbar({ links }) {
           <nav className="nav-links__container">
             {links &&
               links.map((link, i) => (
-                <a className="nav-link" href={link.href} key={i}>
+                <Link to={link.href} className="nav-link">
                   <div className="nav-link__text">{link.title}</div>
                   <div className="nav-link__background" />
-                </a>
+                </Link>
               ))}
           </nav>
 
@@ -44,11 +45,10 @@ function Navbar({ links }) {
 
 Navbar.defaultProps = {
   links: [
-    { title: "Home", href: "#home" },
-    { title: "Features", href: "#features" },
-    { title: "Services", href: "#services" },
-    { title: "Pricing", href: "#pricing" },
-    { title: "Contact", href: "#contact" },
+    { title: "Home", href: "/" },
+    { title: "About", href: "/" },
+    { title: "Services", href: "/" },
+    { title: "Contact Us", href: "contact-us" },
   ],
 };
 
