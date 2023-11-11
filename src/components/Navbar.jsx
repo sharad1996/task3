@@ -18,7 +18,7 @@ function Navbar({ links }) {
         }`}
       >
         <div className="nav-content">
-          <div className="nav-logo">Felisity</div>
+          <div className="nav-logo">My App</div>
 
           <nav className="nav-links__container">
             {links &&

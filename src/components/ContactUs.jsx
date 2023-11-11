@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Button, Form, Container, Row, Col } from "react-bootstrap";
 import "../styles/styles.css";
 
@@ -24,9 +25,18 @@ function ContactUs() {
       email,
       phone,
     };
-    console.log("================ >>>>>>>>>>", obj);
     // Call the API
-    resetState();
+    axios
+      .post("http://localhost:8081/v1/users/create", obj)
+      .then(function (response) {
+        alert("Thank you for contact us");
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(() => {
+        resetState();
+      });
   };
 
   return (
